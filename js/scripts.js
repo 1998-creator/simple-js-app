@@ -1,3 +1,4 @@
+// This is the pokemon array of pokemon and their attributes.
 let pokemonList = [
     {name: 'Bulbasaur', height: 7, types: ['grass', 'poison']},
     {name: 'Squirtle', height: 5, types:['water']},
@@ -5,6 +6,7 @@ let pokemonList = [
     {name: 'Caterpie', height: 3, types:['bug']}
 ];
 
+// This is a for loop that gives information on the size of the pokemon.
 for(let i=0; i<pokemonList.length; i++){
     let size= "";
     if(pokemonList[i].height>5){
@@ -15,6 +17,7 @@ for(let i=0; i<pokemonList.length; i++){
         size="This is a medium pokemon"
     }
 
+// This is a for loop that gives information on the color of the pokemon.
     let color="";
     for(let k=0; k<pokemonList[i].types.length; k++){
         if(pokemonList[i].types[k]=='bug'){
@@ -28,6 +31,7 @@ for(let i=0; i<pokemonList.length; i++){
         } 
     }
 
+// This is information within the loop that displays the name and height on the page    
     document.write(
         '<div class="box">'+
 
