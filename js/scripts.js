@@ -23,10 +23,10 @@ let pokemonRepository = (function () {
 console.log(pokemonRepository.getAll())
 console.log(pokemonRepository.add({name: 'Eve', height: 2, types:['speed']}))
 pokemonRepository.add({name: 'Charmander', height: 10, types:['fire']})
-// This is the pokemon array of pokemon and their attributes.
 
 
-// This is a for loop that gives information on the size of the pokemon.
+
+// This is a forEach loop that connects to the IIFE and gives information on the size of the pokemon.
 pokemonRepository.getAll().forEach(function(pokemon){
     let size= "";
     if(pokemon.height>5){
@@ -37,7 +37,7 @@ pokemonRepository.getAll().forEach(function(pokemon){
         size="This is a medium pokemon"
     }
 
-
+// This is a forEach loop that gives information on the color of the pokemon.
     let color="";
     pokemon.types.forEach(function(pokemonType){
         if(pokemonType=='bug'){
