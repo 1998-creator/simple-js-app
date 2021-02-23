@@ -1,13 +1,33 @@
+let pokemonRepository = (function () {
+    let pokemonList = [
+        {name: 'Bulbasaur', height: 7, types: ['grass', 'poison']},
+        {name: 'Squirtle', height: 5, types:['water']},
+        {name: 'Pikachu', height: 4, types:['electric']},
+        {name: 'Caterpie', height: 3, types:['bug']}
+    ];
+  
+    function add(pokemon) {
+      pokemonList.push(pokemon);
+    }
+  
+    function getAll() {
+      return pokemonList;
+    }
+  
+    return {
+      add: add,
+      getAll: getAll
+    };
+  })();
+
+console.log(pokemonRepository.getAll())
+console.log(pokemonRepository.add({name: 'Eve', height: 2, types:['speed']}))
+pokemonRepository.add({name: 'Charmander', height: 10, types:['fire']})
 // This is the pokemon array of pokemon and their attributes.
-let pokemonList = [
-    {name: 'Bulbasaur', height: 7, types: ['grass', 'poison']},
-    {name: 'Squirtle', height: 5, types:['water']},
-    {name: 'Pikachu', height: 4, types:['electric']},
-    {name: 'Caterpie', height: 3, types:['bug']}
-];
+
 
 // This is a for loop that gives information on the size of the pokemon.
-pokemonList.forEach(function(pokemon){
+pokemonRepository.getAll().forEach(function(pokemon){
     let size= "";
     if(pokemon.height>5){
         size="Wow! That's a big pokemon!"
@@ -28,6 +48,10 @@ pokemonList.forEach(function(pokemon){
             color='<span style="color:blue;"> '
         }  else if(pokemonType=='grass'){
             color='<span style="color:green;"> '
+        } else if(pokemonType=='speed'){
+            color='<span style="color:orange;"> '
+        } else if(pokemonType=='fire'){
+            color='<span style="color:red;"> '
         } 
     })
 
