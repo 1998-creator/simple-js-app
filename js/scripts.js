@@ -1,3 +1,4 @@
+// This is an IIFE of the pokemonRepository that includes an add and getAll function
 let pokemonRepository = (function () {
     let pokemonList = [
         {name: 'Bulbasaur', height: 7, types: ['grass', 'poison']},
