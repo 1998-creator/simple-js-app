@@ -142,3 +142,5 @@ document.write(
     pokemon.types+
     "</div>"
     )
+
+
