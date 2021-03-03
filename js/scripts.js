@@ -71,7 +71,7 @@ let pokemonRepository = (function () {
     }
     
     document.querySelector('#show-modal').addEventListener('click', () => {
-      showModal('', '');
+      showModal('Modal title', 'This is the modal content!');
     });
 
     function hideModal() {
@@ -115,6 +115,21 @@ let pokemonRepository = (function () {
       console.error(e);
     });
   }
+
+  window.addEventListener('keydown', (e) => {
+    let modalContainer = document.querySelector('#modal-container');
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();  
+    }
+  });
+
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
 
   return {
     add: add,
