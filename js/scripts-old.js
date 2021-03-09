@@ -248,8 +248,10 @@ document.write(
           
       
           function hideModal() {
-            let modalContainer = document.querySelector('#modal-container');
-            modalContainer.classList.remove('is-visible');
+            // let modalContainer = document.querySelector('#modal-container');
+            let modalContainer = $('#modal-container');
+            // modalContainer.classList.remove('is-visible');
+            modalContainer.removeClass('is-visible');
           }
       
         
